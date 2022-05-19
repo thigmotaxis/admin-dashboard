@@ -52,7 +52,7 @@ table {
 .container {
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 5fr;
   grid-template-rows: 1fr 5fr;
   grid-template-areas:
   "sidebar header"
@@ -190,7 +190,7 @@ table {
 }
 
 .btn {
-  width: 75%;
+  width: 80%;
   height: 60%;
   border-radius: 20px;
   background-color: blue;
@@ -205,6 +205,76 @@ table {
 .content {
   background-color: gray;
   grid-area: content;
+  display: grid;
+  grid-template-columns: 3fr 3fr 2fr;
+  grid-template-rows: 1fr 3fr 3fr 3fr;
+  grid-template-areas:
+  "projects projects announcements"
+  "cards     cards     announcements"
+  "cards     cards     trending"
+  "cards     cards     trending";
+}
+
+.contentTitle {
+  place-self: start;
+}
+
+#projects {
+  grid-area: projects;
+}
+
+#announcements {
+  grid-area: announcements;
+}
+
+.cards {
+  grid-area: cards;
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  grid-template-columns: 1fr 1fr;
+  background-color: olive;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  place-self: center;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  border-radius: 10px;
+}
+
+.cardText {
+  place-self: start;
+
+}
+
+.cardTitle {
+  font-weight: 700;
+  padding: 8px;
+}
+
+.cardContent {
+  line-height: 1.2;
+  padding: 8px;
+}
+
+.cardIcons {
+  place-self: center end;
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cardIcon {
+  padding: 8px;
+  margin-right: 4px;
+}
+
+#trending {
+  grid-area: trending;
 }
 
 /* content styles end */
