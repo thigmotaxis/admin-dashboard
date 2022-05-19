@@ -54,16 +54,20 @@ table {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr 5fr;
-  grid-template-areas: "sidebar header"
-  "sidebar content"
+  grid-template-areas:
+  "sidebar header"
+  "sidebar content";
 }
 
+/* sidebar styles start */
 .sidebar {
   background-color: blue;
   grid-area: sidebar;
   display: grid;
   grid-template-rows: 1fr 7fr;
-  grid-template-areas: "logo" "sb-links"
+  grid-template-areas:
+  "logo"
+  "sb-links";
 }
 
 .logo {
@@ -92,12 +96,115 @@ table {
   place-items: center start;
 }
 
+/* sidebar styles end */
+
+/* header styles start */
+
 .header {
   background-color: red;
   grid-area: header;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-areas:
+  "search    profile"
+  "greeting  btns";
 }
+
+.search {
+  grid-area: search;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-areas: "searchLabel searchField";
+}
+
+.searchLabel, .searchField {
+  align-self: center;
+}
+
+.searchLabel {
+  justify-self: end;
+  grid-area: searchLabel;
+  height: 1.5rem;
+  padding: 1.5rem;
+}
+
+.searchField {
+  justify-self: start;
+  grid-area: searchField;
+  width: 90%;
+  height: 2rem;
+  padding: 8px;
+  border-radius: 15px;
+}
+
+.greeting {
+  grid-area: greeting;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas:
+  "largeProfilePic helloUser"
+  "largeProfilePic username";
+}
+
+.largeProfilePic {
+  grid-area: largeProfilePic;
+  place-self: center;
+}
+
+.helloUser {
+  grid-area: helloUser;
+  place-self: end start;
+}
+
+.profile {
+  grid-area: profile;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "bell profilePic username";
+}
+
+.bell, .profilePic, .username {
+  align-self: center;
+}
+
+.bell {
+  grid-area: bell;
+  justify-self: end;
+}
+
+.profilePic {
+  grid-area: profilePic;
+  justify-self: center;
+}
+
+.username {
+  grid-area: username;
+  justify-self: start;
+}
+
+.btns {
+  grid-area: btns;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.btn {
+  width: 75%;
+  height: 60%;
+  border-radius: 20px;
+  background-color: blue;
+  border: blue;
+  color: white;
+}
+
+/* header styles end */
+
+/* content styles start */
 
 .content {
   background-color: gray;
   grid-area: content;
 }
+
+/* content styles end */
